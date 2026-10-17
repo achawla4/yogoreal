@@ -18,6 +18,10 @@
 /dashboard        /dashboard.html      200
 /account          /dashboard.html      200
 /api/*            https://leibnitz6.onrender.com/api/:splat  200
+/kriyacorpus         /kriyacorpus.html    200
+/kriya_corpus        /kriyacorpus.html    200
+/kriya_corpus.html   /kriyacorpus.html    301
+/Kriya_previews/*    /kriya_previews/:splat  200
 
 
 

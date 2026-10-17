@@ -24,7 +24,7 @@
     <meta property="og:image" content="https://realinstitute.netlify.app/logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="REAL">
-    <meta name="twitter:description" content="Research laboratory and self-realization waypoint focused on information, physics, consciousness, Kriya, and integration.">
+    <meta name="twitter:description" content="Research laboratory and self-realization waypoint focused on information, physics, consciousness, Kriyata, and integration.">
     <meta name="twitter:image" content="https://realinstitute.netlify.app/logo.png">
     <script type="application/ld+json">
     {
@@ -179,6 +179,52 @@
         }
 
         /* Altar image animations */
+/* Container to center and limit the maximum section width */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Image section layout */
+.image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2.5rem); /* Responsive font sizing */
+  text-align: center;
+}
+
+/* Wrapper controls the dynamic window-aware sizing */
+.image-wrapper {
+  width: 100%;
+  max-width: 90vw; /* Never exceeds 90% of the viewport width */
+  height: auto;
+  max-height: 75vh; /* Never exceeds 75% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px; /* Optional: smooth corners */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Optional: depth effect */
+}
+
+/* Image dynamically scales while preserving its aspect ratio */
+.featured-image {
+  width: 100%;
+  height: 100%;
+  max-height: 75vh;
+  object-fit: contain; /* Ensures the whole image is visible without cropping */
+  display: block;
+}
         @keyframes emergeLarge {
             0% {
                 opacity: 0;
@@ -1228,7 +1274,7 @@ footer[role="contentinfo"] a {
       <strong>Arriving from news or external media?</strong> Pause for a moment. Step into 10 seconds of silent sitting in the <em>REAL Kriya Corpus</em> to center your mind before reading.
     </div>
     <div class="mindful-actions">
-      <a href="kriyacorpus.html" class="mindful-btn">🧘 Step Into Stillness</a>
+      <a href="Kriyacorpus.html" class="mindful-btn">🧘 Step Into Stillness</a>
       <button onclick="dismissMindfulBanner()" class="mindful-dismiss" title="Dismiss">&times;</button>
     </div>
   </div>
@@ -1575,37 +1621,21 @@ footer[role="contentinfo"] a {
         <li><a href="#recent-news">News</a></li>
         <li><a href="events.html">Events</a></li>
 
-
-        <!-- Dropdown: Kriya Path -->
-        <li class="nav-dropdown">
-            <a href="#kriya-path" class="dropdown-toggle">Kriya Path</a>
-            <ul class="dropdown-menu">
-                <li><a href="./advent.html">Gurudev's Coming</a></li>
-		<li><a href="./sadhanpara.html">Sannyal Mahasay's Coming</a></li>
-                <li><a href="#kriya-path">Self-Realized Masters</a></li>
-                <li><a href="serampore.html">Serampore: Sri Yukteswarji's Birthplace</a></li>
-                <li><a href="bikrampore.html">Malkha Nagar: Swami Satyanandaji's Birthplace</a></li>
-                <li><a href="#teaching">Teaching, Study Group and Satsang</a></li>
-                <li><a href="teaching_page.html">Weekly Meditation</a></li>
-		<li><a href="./spiritualinsights.html">Spiritual Insights</a></li>
-		<li><a href="./kriyacorpus.html">Kriya Corpus</a></li>	
-		<li><a href="./selfunfoldment.html">Annual Seminar</a></li>
-            </ul>
-        </li>
+       
 
         
 
 
-          <!-- Dropdown: Kathaka Samhita -->
+        
+        <!-- Dropdown: Kriya -->
         <li class="nav-dropdown">
-            <a href="" class="dropdown-toggle">Krishna Yajurveda</a>
+            <a href="#research-divisions" class="dropdown-toggle">Kriya</a>
             <ul class="dropdown-menu">
-                <li><a href="./kathaka.html">Kathaka Samhita Study</a></li>
-                <li><a href="./vriksha.html">Yajurvediya Vriksha</a></li>
+                <li><a href="kriyacorpus.html">Meditation Archives</a></li>
+                
             </ul>
         </li>
 
-        
         
        
         
@@ -1636,6 +1666,8 @@ footer[role="contentinfo"] a {
                 <li><a href="./bookconservatory.html">Book Conservation</a></li>
                 <li><a href="./bharataganit.html">Bharatganit: Repository of Genealogies</a></li>
                 <li><a href="./nehru_archives.html">REAL Nehru Archives</a></li>
+		<li><a href="./openproblems.html">Open Problems in Reform</a></li>
+	        <li><a href="./ebrary.html">E-Library</a></li>
             </ul>
         </li>
 
@@ -1864,40 +1896,60 @@ footer[role="contentinfo"] a {
         <div class="integration-note">
             &#10022; All <a href="#research-divisions">research</a> paths converge in Integration &#10022;
         </div>
-    </section>
+   
 
-<section class="container" id="kriya-path" aria-labelledby="kriya-path-title">
-<h2 class="section-title" id="kriya-path-title">Kriya Path - a Path for Householders and Sannyasis</h2>
+
+<div class="container">
   <div class="image-section">
-    
-<h2 class="section-title" id="kriya-path-title"></h2>
-<h2 class="section-title" id="kriya-path-title"></h2>
-<h2 class="section-title" id="kriya-path-title"></h2>
-
+    <h2 class="section-title">Kriya Path</h2>
     <div class="image-wrapper">
-      <a href="masters.html" title="Click to Meet the Masters of Kriya Yoga">
-        <img src="./assets/altar.png" alt="Exemplary Kriyavans Altar - Click to Meet the Masters" class="featured-image altar-image-animated" style="cursor: pointer;">
-      </a>
-<h2 class="section-title" id="kriya-path-title"></h2>
-<p>REAL Kriya Yoga is for monks and householders alike, with no preference. Some masters (Swami <a href="https://sanskritclassics.net/">Satyeswarananda</a> Giri) emphasized the householder aspect, others emphasized the monastic aspect. REAL Kriya Yoga promotes balanced living with moderation in all activities. Initiation is a sacred bond between teacher and student and is entered into with divine confirmation. Interest can be expressed in writing.</p>
-<p>Five fruits and five flowers, as symbols of the ten indriyas, and a small monetary donation (250 Rs. or 250 USD depending upon the place) are requisites for initiation.</p>
-<p>Daily study of the Bhagavad Gita and the major scripture of one's own religion is essential. REAL Kriya is non-sectarian. An attitude of "putting others first" is recommended for cultivation.</p>
-
+      <img src="./assets/altar.jpg" alt="Gurudevs" class="featured-image">
     </div>
   </div>
-</section>
-
-
-
-
+</div>
+ </section>
 <section class="container" id="recent-news" aria-labelledby="recent-news-title">
     <div class="news-section">
         <h2 class="section-title" id="recent-news-title">Recent News</h2>
         <div class="news-grid">
 
+
+<article class="news-item">
+<time class="news-date" datetime="2026-09-21">26 September 2026</time>
+
+<p class="news-text">REAL is working and praying for a Vaidik Bharat with Sarvadharma Sambhav.</p>
+</article>
+ 
+
+
+
+<article class="news-item">
+<time class="news-date" datetime="2026-09-21">21 September 2026</time>
+
+<p class="news-text">REAL has launched Leibnitz 5.0 for Sarvam, establishing an uncompromising signal processing force in sovereign Indian AI. By uniting Leibnitz’s mathematical DSP engine—featuring semiclassical Fourier transforms (SFT), telephony voice conditioning, and voice activity detection—with Sarvam AI’s foundational models (Saaras STT, Bulbul TTS, and Indic Copilot), this edition sets a new benchmark for acoustic fidelity across regional dialects. Engineered to eliminate telecom noise and distortion before neural ingestion, Leibnitz 5.0 unlocks unmatched transcription accuracy and expressive speech synthesis.
+
+Experience the live studio at <a href="https://leibnitz5sarvam.onrender.com">Sarvam Edition</a>.</p>
+</article>
+ 
+
+
+<article class="news-item">
+<time class="news-date" datetime="2026-09-20">20 September 2026</time>
+                <p class="news-text"><a href="https://leibnitz5.onrender.com">Leibnitz 5.0</a> is offered in Sanskrit. REAL notes the goal of making Sanskrit the global language.</p>
+</article>
+
+
+
+<article class="news-item">
+<time class="news-date" datetime="2026-09-15">15 September 2026</time>
+                <p class="news-text">REAL announces the tenth issue of Prajnanabha journal, <a href="https://drive.google.com/file/d/1oJySpo7DfboKyH-0MSS9Snm0EZW7l4ns/view?usp=sharing">available</a> for reading. </p>
+</article>
+
+
+
 <article class="news-item">
 <time class="news-date" datetime="2026-09-03">03 September 2026</time>
-                <p class="news-text"><strong>Historical Milestone in Signal Processing &amp; Nyaya Logic:</strong> REAL announces the official deployment and successful independent cross-platform verification of <a href="leibnitz6.html">Leibnitz 6.0</a>—the first Nyaya-logic compatible programming interface and Devanagari Domain-Specific Language (Suganita DSL) for spectral signal processing in computing history. Verified live across Linux (shown below executing in Suganita Terminal REPL v6.0 on an independent ThinkCentre host connected to the central Render cloud backend), Windows, and macOS, Leibnitz 6.0 bridges classical Indic epistemology with modern Fast Fourier Transformation (FFT), Sahai progressive anytime streaming, and universal AI copilot assistance.</p>
+                <p class="news-text"><strong>Historical Milestone in Signal Processing &amp; Nyaya Logic:</strong> REAL announces the official deployment and successful independent cross-platform verification of <a href="leibnitz6.html">Leibnitz 6.0</a>—the first Nyaya-logic compatible programming interface and Devanagari Domain-Specific Language (Suganita DSL) for spectral signal processing in computing history. Verified live across Linux (shown below executing in Suganita Terminal REPL v6.0 on an independent ThinkCentre host connected to the central Render cloud backend) and Windows, Leibnitz 6.0 bridges classical Indic epistemology with modern Fast Fourier Transformation (FFT), Sahai progressive anytime streaming, and universal AI copilot assistance.</p>
                 <div style="margin-top: 14px; text-align: center;">
                     <img src="./assets/images/suganita_linux_repl_2026.png" alt="Leibnitz 6 Devanagari Suganita Terminal REPL v6.0 running live on an independent Linux machine connected to central Render cloud server" style="max-width: 100%; max-height: 480px; height: auto; border-radius: 8px; border: 2px solid #daa520; box-shadow: 0 4px 15px rgba(218,165,32,0.3);">
                     <p style="font-size: 0.85em; color: #666; margin-top: 6px; font-style: italic;">Figure: Live execution of Suganita Terminal REPL v6.0 on an independent Linux host verifying zero-setup cloud connection to Leibnitz 6.0 engine on Render.</p>

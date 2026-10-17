@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>REAL E-Brary — Preserving Knowledge. Empowering Discovery.</title>
+  <meta name="description" content="The REAL E-Brary is an institutional open-access electronic conservatory housing foundational, paradigm-shifting papers in Information Theory, Philosophy, and Medicine.">
+  <meta name="theme-color" content="#1b2a3d">
+
+  <!-- Open Graph / Social Sharing Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="REAL E-Brary — Preserving Knowledge. Empowering Discovery.">
+  <meta property="og:description" content="Institutional digital conservatory of landmark, open-access journal papers in Information Theory, Philosophy, and Medicine, complementing yogoreal.net.">
+  <meta property="og:url" content="https://yogoreal.net/ebrary">
+
+  <!-- Scholarly Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231b2a3d'/><text y='70' x='15' font-size='65' fill='%23a9793c'>🏛</text></svg>">
+
+  <!-- Fonts mirroring REAL Book Conservatory -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/catalog_data.js"></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+
+  <!-- Archival Ledger Top Bar -->
+  <nav class="ledger-bar" aria-label="Conservatory Navigation">
+    <div class="wrap">
+      <span>REAL Library · Electronic Conservatory Division</span>
+      <div class="ledger-nav-links">
+        <a class="ledger-link" href="https://yogoreal.net/bookconservatory" target="_blank" rel="noopener">Book Conservatory ↗</a>
+        <span class="sep">·</span>
+        <a class="ledger-link" href="https://yogoreal.net/toc" target="_blank" rel="noopener">Publications TOC (411 Works) ↗</a>
+        <span class="sep">·</span>
+        <a class="ledger-link" href="https://realinstitute.netlify.app" target="_blank" rel="noopener">REAL Institute ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero wrap">
+    <div class="title-card">
+      <div class="eyebrow">Archival Journal Holdings · Electronic Conservatory</div>
+      <h1 class="title">The REAL E-Brary</h1>
+      <p class="subtitle">
+        An institutional repository of foundational, publicly available journal papers and paradigm-shifting scientific milestones in <strong>Information Theory</strong>, <strong>Philosophy</strong>, and <strong>Medicine</strong>.
+      </p>
+      <div class="vision-banner">
+        "It will be the greatest e-brary in the world."
+      </div>
+
+      <!-- Live Archival Metrics -->
+      <div class="metrics-strip">
+        <div class="metric-item">
+          <div class="metric-value" id="metric-total">36</div>
+          <div class="metric-label">Preserved Works</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value" id="metric-domains">3</div>
+          <div class="metric-label">Scholarly Disciplines</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value" id="metric-oa">100%</div>
+          <div class="metric-label">Open-Access Ratio</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value" style="font-size: 1.5rem; margin-top: 6px;">SHA-256</div>
+          <div class="metric-label">Bitstream Integrity</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Conservatory Section -->
+  <main class="wrap">
+    <!-- Search & Filter Controls -->
+    <section class="controls-card" aria-label="Catalog Filtering & Search">
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input 
+          type="text" 
+          id="catalogSearch" 
+          class="search-input" 
+          placeholder="Search by title, author, keyword, concept (e.g. feedback, ephaptic, bosonic, observer)..."
+          autocomplete="off"
+          aria-label="Search catalog"
+        >
+      </div>
+      
+      <div id="filterBar" class="filter-bar">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+      <div class="active-counts">
+        <span id="catalogCount">Loading archival holdings...</span>
+        <span style="font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">
+          Format: Archival PDF + BibTeX Registry
+        </span>
+      </div>
+    </section>
+
+    <!-- Catalog Grid -->
+    <section id="catalogGrid" class="catalog-grid" aria-label="Catalog of Holdings">
+      <!-- Injected dynamically by app.js -->
+    </section>
+  </main>
+
+  <!-- Citation Modal -->
+  <div id="citationModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="citationModalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="citationModalTitle" class="modal-title">Archival Citation & Metadata</h2>
+        <button id="citationModalClose" class="close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div id="citationContent" class="modal-body">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="conservatory-footer">
+    <div class="wrap footer-content">
+      <div>
+        <strong>REAL E-Brary System</strong> · Electronic Conservatory of Human Discovery.
+        <div style="font-size: 0.72rem; color: #a4b3c6; margin-top: 4px;">
+          Curated in alignment with the research program and publication corpus of <a href="https://yogoreal.net/toc" target="_blank" style="color:#d4af37;">yogoreal.net/toc</a>.
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="../metadata/ebrary_catalog.json" target="_blank">JSON Catalog</a>
+        <a href="../metadata/ebrary_catalog.csv" target="_blank">CSV Ledger</a>
+        <a href="../metadata/library.bib" target="_blank">BibTeX Registry</a>
+        <a href="https://yogoreal.net/bookconservatory" target="_blank">Book Conservatory ↗</a>
+        <a href="https://yogoreal.net/toc" target="_blank">Publications TOC ↗</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
