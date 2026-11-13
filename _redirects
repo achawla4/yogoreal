@@ -23,6 +23,16 @@
 /kriya_corpus.html   /kriyacorpus.html    301
 /Kriya_previews/*    /kriya_previews/:splat  200
 
+# Case-normalization for soft copies
+/assets/soft_copies/*    /assets/Soft_Copies/:splat  200
+/assets/Soft_copies/*    /assets/Soft_Copies/:splat  200
+/assets/soft_Copies/*    /assets/Soft_Copies/:splat  200
+/assets/softcopies/*     /assets/Soft_Copies/:splat  200
+/assets/bodhamalafinalKDP.pdf    /assets/bodhamalaFinalKDP.pdf  200
+/assets/bodhamalafinalkdp.pdf    /assets/bodhamalaFinalKDP.pdf  200
+/assets/Soft_Copies/bodhamalafinalKDP.pdf  /assets/Soft_Copies/bodhamalaFinalKDP.pdf  200
+/assets/soft_copies/bodhamalafinalKDP.pdf  /assets/Soft_Copies/bodhamalaFinalKDP.pdf  200
+
 
 
 

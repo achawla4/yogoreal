@@ -20,6 +20,47 @@
   force = true
   conditions = {Country = ["sc", "SC"]}
 
+# Case-normalization for soft copies
+[[redirects]]
+  from = "/assets/soft_copies/*"
+  to = "/assets/Soft_Copies/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/assets/Soft_copies/*"
+  to = "/assets/Soft_Copies/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/assets/soft_Copies/*"
+  to = "/assets/Soft_Copies/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/assets/softcopies/*"
+  to = "/assets/Soft_Copies/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/assets/bodhamalafinalKDP.pdf"
+  to = "/assets/bodhamalaFinalKDP.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/assets/bodhamalafinalkdp.pdf"
+  to = "/assets/bodhamalaFinalKDP.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/assets/Soft_Copies/bodhamalafinalKDP.pdf"
+  to = "/assets/Soft_Copies/bodhamalaFinalKDP.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/assets/soft_copies/bodhamalafinalKDP.pdf"
+  to = "/assets/Soft_Copies/bodhamalaFinalKDP.pdf"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

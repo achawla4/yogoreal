@@ -567,7 +567,8 @@
                 title: "Living Fire",
                 author: "Aman Chawla",
                 category: "philosophy",
-                price: 299,
+                price: 3.52,
+                inrPrice: 299,
                 description: "A philosophical exploration of miracles, consciousness, and empiricism. This groundbreaking work examines the intersection of spiritual experience and rational inquiry.",
                 specs: {
                     pages: "186pp",
@@ -575,7 +576,8 @@
                     lang: "English"
                 },
                 formats: ["ebook", "print"],
-                image: null
+                image: "assets/livingFirefrontv3.png",
+                previewUrl: "paper315.html"
             },
             {
                 id: 2,
@@ -583,6 +585,7 @@
                 author: "Aman Chawla",
                 category: "spirituality",
                 price: 3.83,
+                inrPrice: 299,
                 description: "Fears in our minds stem from the unknown, from ignorance. This volume sheds light on various features of self-knowledge, helping the reader toward fearlessness.",
                 specs: {
                     pages: "28pp",
@@ -590,7 +593,7 @@
                     lang: "English"
                 },
                 formats: ["ebook"],
-                image: null
+                image: "assets/overcomingFearcover.png"
             },
             {
                 id: 3,
@@ -598,6 +601,7 @@
                 author: "Aman Chawla",
                 category: "spirituality",
                 price: 3.83,
+                inrPrice: 299,
                 description: "Despondency is the loss of hope, a mix of pessimism and sadness rooted in ignorance. This book provides subtle thoughts to guide the reader across this limitation.",
                 specs: {
                     pages: "27pp",
@@ -605,7 +609,7 @@
                     lang: "English"
                 },
                 formats: ["ebook"],
-                image: null
+                image: "assets/pathAcrossDespondencyCover.png"
             },
             {
                 id: 4,
@@ -613,6 +617,7 @@
                 author: "Aman Chawla",
                 category: "philosophy",
                 price: 4.71,
+                inrPrice: 399,
                 description: "Readings in jnana yoga and raja yoga exploring consciousness from both scientific and spiritual perspectives. A comprehensive examination of Sri Aurobindo's approach.",
                 specs: {
                     pages: "152pp",
@@ -620,7 +625,7 @@
                     lang: "English"
                 },
                 formats: ["ebook"],
-                image: null
+                image: "assets/pathOfInformationcover.png"
             },
             {
                 id: 5,
@@ -628,6 +633,7 @@
                 author: "Aman Chawla",
                 category: "philosophy",
                 price: 3.83,
+                inrPrice: 299,
                 description: "Further selections on jnana and raja methods. A raft-like offering for divine contemplation and deep thinking in your daily sadhana.",
                 specs: {
                     pages: "33pp",
@@ -635,22 +641,23 @@
                     lang: "English"
                 },
                 formats: ["ebook"],
-                image: null
+                image: "assets/pathOfInformationvol2cover.png"
             },
             {
                 id: 6,
                 title: "Bodhamala: Understanding Vedanta",
                 author: "Aman Chawla",
                 category: "philosophy",
-                price: 3.83,
+                price: 3.52,
+                inrPrice: 299,
                 description: "Essays on attaining comprehension of Vedanta in the modern context. Understanding the basics of where we are trying to reach on the spiritual path.",
                 specs: {
                     pages: "51pp",
                     published: "January 26, 2026",
                     lang: "English"
                 },
-                formats: ["ebook"],
-                image: null
+                formats: ["ebook", "print"],
+                image: "assets/bodhamalaCover.png"
             },
             {
                 id: 7,
@@ -770,7 +777,7 @@
             container.innerHTML = filtered.map(book => `
                 <div class="product-card">
                     <div class="book-cover">
-                        <div class="book-cover-placeholder">📖</div>
+                        ${book.image ? `<img src="${book.image}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">` : `<div class="book-cover-placeholder">📖</div>`}
                     </div>
                     <div class="product-content">
                         <div class="product-meta">
@@ -793,20 +800,25 @@
                         <div class="price-section">
                             ${book.isFree 
                                 ? '<div style="color: var(--success); font-weight: 700; font-size: 1.2em;">FREE</div>'
-                                : `<div class="price">$${book.price.toFixed(2)}<span class="currency">/one-time</span></div>`
+                                : `<div class="price">₹${getInrPrice(book.price, book.inrPrice)} <span style="font-size: 0.8em; color: var(--text-light); font-weight: normal;">($${book.price.toFixed(2)})</span></div>`
                             }
                         </div>
                         <div class="payment-section">
                             <div class="payment-label">Get This Book</div>
-                            <div class="payment-buttons">
+                            <div class="payment-buttons" style="display: flex; flex-direction: column; gap: 8px;">
                                 ${book.isFree 
-                                    ? '<button class="pay-btn pay-upi" style="flex: 1;" onclick="openFreeModal()">Read Now</button>'
+                                    ? '<button class="pay-btn pay-upi" style="width: 100%;" onclick="openFreeModal()">Read Now</button>'
                                     : `
-                                    <button class="pay-btn pay-upi" style="flex: 1;" onclick="addToCart('${book.title.replace(/'/g, "\\'")}', ${getInrPrice(book.price)})">
+                                    <button class="pay-btn pay-upi" style="width: 100%;" onclick="addToCart('${book.title.replace(/'/g, "\\'")}', ${getInrPrice(book.price, book.inrPrice)})">
                                         🛒 Add to Cart
                                     </button>
                                     `
                                 }
+                                ${book.previewUrl ? `
+                                    <a href="${book.previewUrl}" target="_blank" class="pay-btn" style="background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); text-decoration: none; text-align: center; display: block; padding: 8px 12px; border-radius: 4px; font-size: 0.88em; font-weight: 600;">
+                                        📄 Read Free Preview Monograph
+                                    </a>
+                                ` : ''}
                             </div>
                         </div>
                     </div>
@@ -820,7 +832,10 @@
             renderProducts(type);
         }
 
-        function getInrPrice(price) {
+        function getInrPrice(price, inrPrice) {
+            if (inrPrice) {
+                return inrPrice;
+            }
             if (price < 50) {
                 return Math.round(price * 85); // 1 USD = 85 INR
             }
